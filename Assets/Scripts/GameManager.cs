@@ -1,15 +1,12 @@
-using UnityEngine;
 using System;
+using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-
-    /// <summary>
-    /// Singleton instance of the GameManager
-    /// </summary>
     public static GameManager Instance { get; private set; }
+    public int Score { get; private set; }
 
-    void Awake()
+    private void Awake()
     {
         if (Instance == null)
         {
@@ -22,12 +19,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Quits the game
-    /// </summary>
-
-    public void QuitGame()
+    public void AddScore(int amount)
     {
-        Application.Quit();
+        Score += amount;
     }
 }
